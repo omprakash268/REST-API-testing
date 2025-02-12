@@ -20,4 +20,16 @@ public class CourseService {
     public List<Course> getAllCourses(){
         return courseList;
     }
+
+    public Course getCourseById(String courseId){
+
+        Course course = null;
+        for(Course it:courseList){
+            if(it.getCourseId().equals(courseId)){
+                course = it;
+                break;
+            }
+        }
+        return course;
+    }
 }

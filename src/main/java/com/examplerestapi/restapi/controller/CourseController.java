@@ -4,6 +4,7 @@ import com.examplerestapi.restapi.model.Course;
 import com.examplerestapi.restapi.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,5 +23,10 @@ public class CourseController {
     @GetMapping("/courses")
     public List<Course> getAllCourses(){
        return  courseService.getAllCourses();
+    }
+
+    @GetMapping("/courses/{courseId}")
+    public Course getCourseById(@PathVariable String courseId){
+        return courseService.getCourseById(courseId);
     }
 }
