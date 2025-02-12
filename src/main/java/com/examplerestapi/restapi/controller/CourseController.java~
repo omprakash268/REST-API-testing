@@ -1,0 +1,17 @@
+package com.examplerestapi.restapi.controller;
+
+import com.examplerestapi.restapi.model.Course;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CourseController {
+
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
+
+    @GetMapping("/courses")
+    public List<Course>
+}
